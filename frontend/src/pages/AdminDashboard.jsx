@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../App.css";
-
-const API_URL = "http://localhost:8000";
+import { API_BASE_URL } from "../config";
+const API_URL = API_BASE_URL;
 
 const EMPTY_FURNITURE_FORM = {
   name: "",

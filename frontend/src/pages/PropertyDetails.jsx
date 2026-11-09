@@ -2,11 +2,11 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "../App.css";
-
-const API_URL = "http://127.0.0.1:8000/api/properties/";
-const MEDIA_URL = "http://127.0.0.1:8000";
+import { API_BASE_URL } from "../config";
+const API_URL = `${API_BASE_URL}/api/properties/`;
+const MEDIA_URL = API_BASE_URL;
 const WHATSAPP_API_URL =
-  "http://127.0.0.1:8000/api/properties/whatsapp/";
+  `${API_BASE_URL}/api/properties/whatsapp/`
 
 function PropertyDetails() {
   const { id } = useParams();

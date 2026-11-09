@@ -1,9 +1,8 @@
 
 import { useEffect, useMemo, useState } from "react";
 import "../App.css";
-
-const API_URL = "http://localhost:8000/api/furniture/";
-
+import { API_BASE_URL } from "../config";
+const API_URL = `${API_BASE_URL}/api/furniture/`;
 const categories = [
   { label: "All Furniture", value: "all" },
   { label: "Sofas", value: "sofa" },
@@ -26,7 +25,7 @@ function Furniture() {
     async function loadWhatsAppNumber() {
       try {
         const response = await fetch(
-          "http://localhost:8000/api/properties/whatsapp/"
+          `${API_BASE_URL}/api/properties/whatsapp/`
         );
 
         if (!response.ok) return;

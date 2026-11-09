@@ -2,10 +2,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./App.css";
-
-const API_URL = "http://127.0.0.1:8000/api/properties/";
+import { API_BASE_URL } from "./config";
+const API_URL = `${API_BASE_URL}/api/properties/`;
 const WHATSAPP_API_URL =
-  "http://127.0.0.1:8000/api/properties/whatsapp/";
+  `${API_BASE_URL}/api/properties/whatsapp/`
 
 const categories = [
   "All",
@@ -295,7 +295,9 @@ Please share more details about this property.`;
                       src={
                         property.image.startsWith("http")
                           ? property.image
-                          : `http://127.0.0.1:8000${property.image}`
+                          : property.image?.startsWith("http")
+                          ? property.image
+                          : `${API_BASE_URL}${property.image}`
                       }
                       alt={property.title}
                     />

@@ -2,8 +2,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
-
-const API_URL = "http://127.0.0.1:8000";
+import { API_BASE_URL } from "../config";
+const API_URL = API_BASE_URL;
 const MAX_IMAGES = 10;
 const MAX_IMAGE_SIZE = 5 * 1024 * 1024; // 5 MB per image
 
